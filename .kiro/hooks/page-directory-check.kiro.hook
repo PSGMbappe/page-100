@@ -1,0 +1,13 @@
+{
+  "name": "Page directory check",
+  "description": "When the mock pages change, checks that the page 100 index, every page's Fastext links and the README page table still match the pages that actually exist.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["src/data/mockPages.ts"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "src/data/mockPages.ts was just edited. Check that (1) the index on page 100 lists every page that buildMockPages() returns, with the right page numbers, (2) every Fastext link on every page points to a page that exists and its label is 10 characters or fewer, and (3) the page table in README.md matches. Report any page that is missing, mislabelled, or linked but not defined. Do not change any files; just report."
+  }
+}

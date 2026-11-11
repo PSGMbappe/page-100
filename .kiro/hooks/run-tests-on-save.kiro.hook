@@ -1,0 +1,14 @@
+{
+  "name": "Run tests on save",
+  "description": "Runs the Vitest suite (unit + property tests) whenever a TypeScript source or test file is saved, so regressions against the teletext-engine spec show up immediately.",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["src/**/*.ts", "tests/**/*.ts"]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "npm test",
+    "timeout": 120
+  }
+}

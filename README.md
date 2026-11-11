@@ -52,7 +52,7 @@ This project was planned and started in **Kiro**:
 - **Steering** (`.kiro/steering/`): product, tech and structure rules that every Kiro request follows.
 - **Spec** (`.kiro/specs/teletext-engine/`): Kiro generated the requirements (EARS format), the design (architecture, interfaces, correctness properties) and the 21-task implementation plan, each reviewed and refined before approval.
 - **Implementation**: Kiro implemented the project setup and the first engine modules (tasks 1–3, plus the mosaic and number-entry modules). After the Kiro credits ran out, the remaining tasks were implemented with Claude Code, following Kiro's spec and task list.
-- **Hooks** (`.kiro/hooks/`): automations added in Kiro.
+- **Hooks** (`.kiro/hooks/`): *Run tests on save* runs the Vitest suite whenever a source or test file is saved; *Page directory check* asks Kiro to verify the index, Fastext links and README page table whenever the pages change.
 
 ## Licence
 

@@ -4,6 +4,8 @@ Page 100 brings back 1980s/90s UK TV teletext as a web app: chunky full-screen p
 
 Built for **Kiroween 2026**, *Resurrection* category.
 
+**Live:** https://psgmbappe.github.io/page-100/
+
 ## Try it
 
 - Type a page number on your keyboard (or the on-screen remote) and watch the header search for it.
@@ -27,7 +29,8 @@ npm install
 npm run dev        # http://localhost:5173
 npm test           # unit + property-based tests (Vitest + fast-check)
 npm run coverage   # coverage for the engine and data modules
-npm run build      # static site in dist/ (deployable to GitHub Pages)
+npm run build      # static site in dist/
+npm run deploy     # test, build and publish to GitHub Pages (gh-pages branch)
 ```
 
 ## How it's built

@@ -60,7 +60,7 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - Test `isValid` returns false for empty string, mixed-case names, and unknown strings
     - _Requirements: 2.4, 14.2_
 
-- [ ] 4. Implement MosaicRenderer
+- [x] 4. Implement MosaicRenderer
   - [x] 4.1 Implement `src/engine/MosaicRenderer.ts`
     - `decode(charCode)`: implement `mask = (code & 0x1F) | ((code & 0x40) ? 0x20 : 0)`; throw `RangeError` for codes outside 0x20–0x3F and 0x60–0x7F
     - `encode(bitmask)`: implement `code = 0x20 | (mask & 0x1F) | ((mask & 0x20) ? 0x40 : 0)`; throw `RangeError` for bitmask outside 0–63
@@ -86,7 +86,7 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - Test `RangeError` for bitmask 64 and negative values
     - _Requirements: 3.2, 3.6, 14.2, 14.5, 14.6_
 
-- [ ] 5. Implement NumberBuffer
+- [x] 5. Implement NumberBuffer
   - [x] 5.1 Implement `src/engine/NumberBuffer.ts`
     - Internal state: `digits` string (max length 3)
     - `append(digit)`: appends if `digits.length < 3`, returns false if already full
@@ -113,11 +113,11 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - Test `clear()` resets fully-populated buffer
     - _Requirements: 7.2, 7.9, 14.2_
 
-- [ ] 6. Checkpoint — verify pure engine unit and property tests pass
+- [x] 6. Checkpoint — verify pure engine unit and property tests pass
   - Run `npx vitest run tests/unit tests/property` and ensure all tests pass with ≥80 % line coverage on the modules implemented so far
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 7. Implement FlashClock
+- [x] 7. Implement FlashClock
   - [ ] 7.1 Implement `src/engine/FlashClock.ts`
     - Maintain `phase: boolean` (default `true`)
     - `start()`: call `setInterval(500)` toggling phase and notifying all subscribers; guard against double-start
@@ -132,7 +132,7 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - Test that `start()` called twice does not create two intervals
     - _Requirements: 5.2, 5.4_
 
-- [ ] 8. Implement RevealMode and HoldMode
+- [x] 8. Implement RevealMode and HoldMode
   - [ ] 8.1 Implement `src/engine/RevealMode.ts`
     - Simple boolean flag with `activate()`, `deactivate()`, `toggle()`, `reset()` (→ false), and `readonly isActive: boolean`
     - Export `createRevealMode()`
@@ -145,7 +145,7 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - Test toggle, activate, deactivate, and reset transitions for both
     - _Requirements: 9.3, 9.4, 10.3, 10.5_
 
-- [ ] 9. Implement SubPageRotator
+- [x] 9. Implement SubPageRotator
   - [ ] 9.1 Implement `src/engine/SubPageRotator.ts`
     - `start(totalSubPages)`: begin 15 000 ms `setInterval`; set `currentIndex` to 0
     - `stop()`: clear the interval
@@ -162,7 +162,7 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - Test that `stop()` prevents any further `onAdvance` calls
     - _Requirements: 9.1, 9.2, 9.3, 9.4_
 
-- [ ] 10. Implement ScreenReaderGenerator
+- [x] 10. Implement ScreenReaderGenerator
   - [ ] 10.1 Implement `src/engine/ScreenReaderGenerator.ts`
     - Iterate rows 0–24; for each cell: if `mosaic` → `"[graphic]"`; else if `concealed && !revealActive` → `" "`; else decode char code to string
     - Join each row's cells, trim trailing spaces, omit empty rows
@@ -188,7 +188,7 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - Test output contains no colour or attribute strings
     - _Requirements: 12.1–12.5_
 
-- [ ] 11. Implement HeaderRow and FastextBar
+- [x] 11. Implement HeaderRow and FastextBar
   - [ ] 11.1 Implement `src/engine/HeaderRow.ts`
     - Accepts references to `GridModel`, `NumberBuffer`, `RevealMode`, current page number, and sub-page info
     - `render(now: Date)`: writes row 0 of the grid according to the header layout (cols 0–2 buffer/page, 4–11 "PAGE 100", 13–17 sub-page/hold, 20–25 date, 32–39 clock)
@@ -208,7 +208,7 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - Test FastextBar renders a blank slot when a link is undefined
     - _Requirements: 6.2, 6.3, 6.4, 6.7, 6.8, 8.2, 8.9_
 
-- [ ] 12. Implement MockDataStore
+- [x] 12. Implement MockDataStore
   - [ ] 12.1 Implement `src/data/MockDataStore.ts`
     - Define five `PageData` objects (pages 100, 101, 150, 302, 401) with cell arrays conforming to the mock catalogue in the design
     - Page 100: mosaic logo with ≥4×2 mosaic cells
@@ -227,7 +227,7 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - Test `listPages()` returns exactly `[100, 101, 150, 302, 401]`
     - _Requirements: 11.1–11.5, 11.7_
 
-- [ ] 13. Implement Navigator
+- [x] 13. Implement Navigator
   - [ ] 13.1 Implement `src/engine/Navigator.ts`
     - Finite state machine with states `idle | buffering | loading | found | not-found`
     - `onDigit(d)`: append to `NumberBuffer`; transition `idle → buffering`; when buffer reaches 3 digits transition `buffering → loading` and call `PageDataProvider.getPage()`
@@ -249,18 +249,18 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - Test digit input while loading/found is ignored
     - _Requirements: 7.1–7.10, 14.2_
 
-- [ ] 14. Checkpoint — verify full engine test suite
+- [x] 14. Checkpoint — verify full engine test suite
   - Run `npx vitest run --coverage` and confirm all engine-module tests pass with ≥80 % line coverage across `GridModel`, `ColourModel`, `MosaicRenderer`, `NumberBuffer`, and `Navigator`
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 15. Download and bundle the Bedstead teletext font
+- [x] 15. Download and bundle the Bedstead teletext font
   - Visit the official Bedstead website (https://bjh21.me.uk/bedstead/) and download the font files
   - Copy the `bedstead.woff2` file (or the best available web format) into `public/fonts/bedstead.woff2`
   - Copy the font's licence and/or readme file into `public/fonts/` alongside the font file (e.g. `public/fonts/LICENCE` or `public/fonts/README`)
   - Verify the font file is not corrupt by opening it in a font viewer or running `woff2_decompress` if available
   - _Requirements: (design constraint — Bedstead font bundled locally, no CDN)_
 
-- [ ] 16. Implement GridRenderer
+- [x] 16. Implement GridRenderer
   - [ ] 16.1 Implement `src/ui/GridRenderer.ts`
     - Accept `HTMLCanvasElement`, `GridModel`, `ColourModel`, `MosaicRenderer`, `FlashClock`, and `RevealMode` as constructor arguments
     - `init()`: await `document.fonts.ready`; then call `resize()` and `renderAll()`
@@ -275,7 +275,7 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - Verify `devicePixelRatio` scaling is applied to canvas `width`/`height` attributes
     - _Requirements: 1.5, 1.2_
 
-- [ ] 17. Implement OnScreenRemote
+- [x] 17. Implement OnScreenRemote
   - [ ] 17.1 Implement `src/ui/OnScreenRemote.ts`
     - Render digit buttons 0–9, Backspace, Hold, and Reveal using vanilla DOM (no framework)
     - Collapse/Expand toggle: hide/show the remote body; update toggle label
@@ -290,14 +290,14 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - Test that Hold and Reveal buttons dispatch the correct events
     - _Requirements: 13.1, 13.4–13.10_
 
-- [ ] 18. Implement ScreenReaderView ARIA integration
+- [x] 18. Implement ScreenReaderView ARIA integration
   - [ ] 18.1 Add ARIA live region to `index.html` and wire to `ScreenReaderGenerator` in `main.ts`
     - Add `<div aria-live="polite" id="sr-view">` to `index.html`
     - After every page render, call `ScreenReaderGenerator.generate()` and update the element's `textContent`
     - Bind `Alt+T` keyboard shortcut to move focus to `#sr-view`
     - _Requirements: 12.6, 12.7_
 
-- [ ] 19. Wire everything together in `main.ts` and `index.html`
+- [x] 19. Wire everything together in `main.ts` and `index.html`
   - [ ] 19.1 Create `index.html` with `<canvas id="teletext">`, `#sr-view`, and remote container; include `@font-face` for Bedstead from `public/fonts/bedstead.woff2`; apply 4:3 letterbox CSS
     - _Requirements: 1.2, 1.4, 11.6_
   - [ ] 19.2 Create `src/main.ts`
@@ -308,11 +308,11 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - Call `Navigator.navigateTo(100)` to load the default start page
     - _Requirements: 7.7, 8.4–8.8, 9.3, 10.3, 11.6, 13.7–13.10_
 
-- [ ] 20. Final checkpoint — full test suite and coverage
+- [x] 20. Final checkpoint — full test suite and coverage
   - Run `npx vitest run --coverage` and confirm all tests pass within 10 seconds and coverage is ≥80 % across all engine modules
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 21. Write README.md and add MIT LICENSE file
+- [x] 21. Write README.md and add MIT LICENSE file
   - Create `README.md` in the project root with:
     - A short description of what Page 100 is (browser-based teletext emulator recreating the classic British teletext experience)
     - How to run it: `npm install`, `npm run dev` (development server), `npm test` (unit + property tests), `npm run build` (production build)

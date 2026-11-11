@@ -103,7 +103,7 @@ function page150(): PageData {
     b.text(row, 1, q1, { fg: 'cyan' });
     b.text(row + 1, 1, q2, { fg: 'cyan' });
     b.text(row + 2, 1, 'A:', { fg: 'white' });
-    b.text(row + 2, 3, answer.trim(), { fg: 'yellow', concealed: true });
+    b.text(row + 2, 4, answer.trim(), { fg: 'yellow', concealed: true });
   });
   b.text(21, 1, 'Press V or tap REVEAL for the answers', { fg: 'green' });
   return {
@@ -123,7 +123,8 @@ function footballSub(index: number, title: string, rows: [string, string, string
   rows.forEach(([home, score, away], i) => {
     const row = 7 + i * 2;
     b.text(row, 1, home.padEnd(15, ' '), { fg: 'white' });
-    b.text(row, 17, score, { fg: 'yellow', flash: live && score.includes('*') });
+    // A '*' marks a match still in play: its score flashes.
+    b.text(row, 17, score.replace('*', ' '), { fg: 'yellow', flash: live && score.includes('*') });
     b.text(row, 23, away, { fg: 'white' });
   });
   return { index, total: 2, cells: b.build() };

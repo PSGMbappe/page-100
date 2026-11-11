@@ -1,0 +1,13 @@
+Bedstead teletext font
+Source: https://bjh21.me.uk/bedstead/ (file: bedstead.otf, version 3.261)
+Author: Ben Harris
+
+Licence, as stated by the author on the Bedstead website:
+
+  "The program that generates Bedstead and all of the newly-designed glyphs
+  have been released into the public domain. I believe that the original
+  SAA5050 bitmap font is essentially in the public domain in the United
+  Kingdom as a result of Section 55 of the Copyright, Designs and Patents
+  Act 1988 as applied by subparagraph 14(5) of Schedule 1."
+
+The font file is bundled unmodified.

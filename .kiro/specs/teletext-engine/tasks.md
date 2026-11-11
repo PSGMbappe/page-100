@@ -67,19 +67,19 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - `subBlocks(bitmask)`: return a 6-tuple of booleans for bits 0–5 in row-major order
     - Export `createMosaicRenderer(): MosaicRenderer`
     - _Requirements: 3.1, 3.2, 3.5, 14.5, 14.6_
-  - [ ] 4.2 Write property test for mosaic round-trip (Property 1)
+  - [x] 4.2 Write property test for mosaic round-trip (Property 1)
     - **Property 1: Mosaic character round-trip**
     - Use `fc.oneof(fc.integer({min:0x20,max:0x3F}), fc.integer({min:0x60,max:0x7F}))` for valid codes
     - Assert `encode(decode(code)) === code` and `decode(encode(mask)) === mask` for all valid inputs
     - **Validates: Requirements 3.2, 3.5, 14.5**
     - `// Feature: teletext-engine, Property 1: Mosaic character round-trip`
-  - [ ] 4.3 Write property test for mosaic sub-block count (Property 2)
+  - [x] 4.3 Write property test for mosaic sub-block count (Property 2)
     - **Property 2: Mosaic sub-block count**
     - Use same arbitrary as Property 1
     - Assert `subBlocks(decode(code)).filter(Boolean).length === popcount(decode(code))`
     - **Validates: Requirements 3.1, 3.2, 3.5**
     - `// Feature: teletext-engine, Property 2: Mosaic sub-block count`
-  - [ ] 4.4 Write unit tests for MosaicRenderer
+  - [x] 4.4 Write unit tests for MosaicRenderer
     - Test `decode` on a selection of known codes from both valid ranges
     - Test `RangeError` for codes 0x40–0x5F and codes outside both ranges
     - Test `encode` for bitmasks 0 (all inactive) and 63 (all active)
@@ -95,19 +95,19 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - `isFull` / `isEmpty` computed getters
     - Export `createNumberBuffer(): NumberBuffer`
     - _Requirements: 7.1, 7.2, 7.8, 7.9_
-  - [ ] 5.2 Write property test for NumberBuffer accumulation invariant (Property 4)
+  - [x] 5.2 Write property test for NumberBuffer accumulation invariant (Property 4)
     - **Property 4: NumberBuffer digit accumulation invariant**
     - Use `fc.array(fc.char().filter(c => /[0-9]/.test(c)), { maxLength: 10 })` to generate digit sequences
     - Assert `digits` is always a prefix of input, length never exceeds 3, and `isFull === (digits.length === 3)`
     - **Validates: Requirements 7.1, 7.2**
     - `// Feature: teletext-engine, Property 4: NumberBuffer digit accumulation invariant`
-  - [ ] 5.3 Write property test for NumberBuffer backspace invariant (Property 5)
+  - [x] 5.3 Write property test for NumberBuffer backspace invariant (Property 5)
     - **Property 5: NumberBuffer backspace is a left-inverse of append**
     - Use `fc.array(fc.char().filter(c => /[0-9]/.test(c)), { minLength: 1, maxLength: 3 })` to build a non-empty buffer
     - Assert that `backspace()` removes exactly the last digit and leaves all prior digits unchanged
     - **Validates: Requirements 7.8**
     - `// Feature: teletext-engine, Property 5: NumberBuffer backspace is a left-inverse of append`
-  - [ ] 5.4 Write unit tests for NumberBuffer
+  - [x] 5.4 Write unit tests for NumberBuffer
     - Test ignore-when-full: fourth `append` returns false without modifying `digits`
     - Test backspace on empty returns false
     - Test `clear()` resets fully-populated buffer
@@ -118,14 +118,14 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
   - Ensure all tests pass, ask the user if questions arise.
 
 - [x] 7. Implement FlashClock
-  - [ ] 7.1 Implement `src/engine/FlashClock.ts`
+  - [x] 7.1 Implement `src/engine/FlashClock.ts`
     - Maintain `phase: boolean` (default `true`)
     - `start()`: call `setInterval(500)` toggling phase and notifying all subscribers; guard against double-start
     - `stop()`: clear the interval, reset `phase` to `true`, notify subscribers
     - `subscribe(cb)`: add callback to subscriber list; return unsubscribe function
     - Export `createFlashClock(): FlashClock`
     - _Requirements: 5.2, 5.3, 5.4_
-  - [ ] 7.2 Write unit tests for FlashClock
+  - [x] 7.2 Write unit tests for FlashClock
     - Use fake timers (Vitest `vi.useFakeTimers`) to advance 500 ms and assert phase toggled
     - Test that all subscribers receive each phase change
     - Test that `stop()` resets phase to `true` and no further callbacks fire
@@ -133,20 +133,20 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - _Requirements: 5.2, 5.4_
 
 - [x] 8. Implement RevealMode and HoldMode
-  - [ ] 8.1 Implement `src/engine/RevealMode.ts`
+  - [x] 8.1 Implement `src/engine/RevealMode.ts`
     - Simple boolean flag with `activate()`, `deactivate()`, `toggle()`, `reset()` (→ false), and `readonly isActive: boolean`
     - Export `createRevealMode()`
     - _Requirements: 10.1, 10.3, 10.4, 10.5, 10.6_
-  - [ ] 8.2 Implement `src/engine/HoldMode.ts`
+  - [x] 8.2 Implement `src/engine/HoldMode.ts`
     - Same shape as RevealMode: boolean flag with `activate()`, `deactivate()`, `toggle()`, `reset()` (→ false), and `readonly isActive: boolean`
     - Export `createHoldMode()`
     - _Requirements: 9.3, 9.4, 9.6_
-  - [ ] 8.3 Write unit tests for RevealMode and HoldMode
+  - [x] 8.3 Write unit tests for RevealMode and HoldMode
     - Test toggle, activate, deactivate, and reset transitions for both
     - _Requirements: 9.3, 9.4, 10.3, 10.5_
 
 - [x] 9. Implement SubPageRotator
-  - [ ] 9.1 Implement `src/engine/SubPageRotator.ts`
+  - [x] 9.1 Implement `src/engine/SubPageRotator.ts`
     - `start(totalSubPages)`: begin 15 000 ms `setInterval`; set `currentIndex` to 0
     - `stop()`: clear the interval
     - `hold()`: set `isHeld = true`; do not clear interval but skip advance while held
@@ -155,7 +155,7 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - Clamp out-of-range `currentIndex` on `start` to 0 and log a warning
     - Export `createSubPageRotator(): SubPageRotator`
     - _Requirements: 9.1, 9.2, 9.3, 9.4, 9.6_
-  - [ ] 9.2 Write unit tests for SubPageRotator
+  - [x] 9.2 Write unit tests for SubPageRotator
     - Use fake timers to advance 15 s and assert `onAdvance` fired with incremented index
     - Test wrap-around from last to first sub-page
     - Test that `hold()` suppresses `onAdvance`, `resume()` re-enables it
@@ -163,25 +163,25 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - _Requirements: 9.1, 9.2, 9.3, 9.4_
 
 - [x] 10. Implement ScreenReaderGenerator
-  - [ ] 10.1 Implement `src/engine/ScreenReaderGenerator.ts`
+  - [x] 10.1 Implement `src/engine/ScreenReaderGenerator.ts`
     - Iterate rows 0–24; for each cell: if `mosaic` → `"[graphic]"`; else if `concealed && !revealActive` → `" "`; else decode char code to string
     - Join each row's cells, trim trailing spaces, omit empty rows
     - Return the resulting string array
     - Export `createScreenReaderGenerator(): ScreenReaderGenerator`
     - _Requirements: 12.1, 12.2, 12.3, 12.4, 12.5_
-  - [ ] 10.2 Write property test for screen reader attribute stripping (Property 8)
+  - [x] 10.2 Write property test for screen reader attribute stripping (Property 8)
     - **Property 8: Screen reader view strips attributes**
     - Use `fc.array(cellArbitrary, { minLength: 40, maxLength: 40 })` to generate a full row of arbitrary cells
     - Assert output contains no colour codes, attribute codes, or mosaic character codes
     - **Validates: Requirements 12.1, 12.2, 12.3**
     - `// Feature: teletext-engine, Property 8: Screen reader view strips attributes`
-  - [ ] 10.3 Write property test for reveal mode preserving concealed attribute (Property 9)
+  - [x] 10.3 Write property test for reveal mode preserving concealed attribute (Property 9)
     - **Property 9: Reveal mode does not modify concealed attribute**
     - Use `fc.boolean()` for `revealActive` combined with a grid containing cells with `concealed: true`
     - Assert the cell's `concealed` field in `GridModel` remains `true` after `generate()` regardless of `revealActive`
     - **Validates: Requirements 10.3, 10.5, 12.4, 12.5**
     - `// Feature: teletext-engine, Property 9: Reveal mode preserves concealed attribute`
-  - [ ] 10.4 Write unit tests for ScreenReaderGenerator
+  - [x] 10.4 Write unit tests for ScreenReaderGenerator
     - Test mosaic cells produce `"[graphic]"`
     - Test concealed cells return `" "` when `revealActive = false` and actual character when `true`
     - Test empty rows are omitted from output
@@ -189,18 +189,18 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - _Requirements: 12.1–12.5_
 
 - [x] 11. Implement HeaderRow and FastextBar
-  - [ ] 11.1 Implement `src/engine/HeaderRow.ts`
+  - [x] 11.1 Implement `src/engine/HeaderRow.ts`
     - Accepts references to `GridModel`, `NumberBuffer`, `RevealMode`, current page number, and sub-page info
     - `render(now: Date)`: writes row 0 of the grid according to the header layout (cols 0–2 buffer/page, 4–11 "PAGE 100", 13–17 sub-page/hold, 20–25 date, 32–39 clock)
     - `start()` / `stop()`: manage the 1 s `setInterval` for the clock and 500 ms `setInterval` for the blinking cursor
     - Export `createHeaderRow(...)`
     - _Requirements: 6.1–6.8_
-  - [ ] 11.2 Implement `src/engine/FastextBar.ts`
+  - [x] 11.2 Implement `src/engine/FastextBar.ts`
     - Accepts a `PageData` reference
     - `render(grid: GridModel)`: writes row 24 according to the Fastext bar layout (cols 0–9 red, 10–19 green, 20–29 yellow, 30–39 cyan), padding/truncating labels to exactly 10 chars; blank slot if link is undefined
     - Export `createFastextBar()`
     - _Requirements: 8.1, 8.2, 8.3, 8.9_
-  - [ ] 11.3 Write unit tests for HeaderRow and FastextBar
+  - [x] 11.3 Write unit tests for HeaderRow and FastextBar
     - Test HeaderRow writes correct cells at the specified column ranges for each field
     - Test that an empty NumberBuffer causes the current page number to appear in cols 0–2
     - Test that a 1- or 2-digit buffer shows digits plus a cursor placeholder
@@ -209,7 +209,7 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - _Requirements: 6.2, 6.3, 6.4, 6.7, 6.8, 8.2, 8.9_
 
 - [x] 12. Implement MockDataStore
-  - [ ] 12.1 Implement `src/data/MockDataStore.ts`
+  - [x] 12.1 Implement `src/data/MockDataStore.ts`
     - Define five `PageData` objects (pages 100, 101, 150, 302, 401) with cell arrays conforming to the mock catalogue in the design
     - Page 100: mosaic logo with ≥4×2 mosaic cells
     - Page 101: double-height headline cells on at least one row
@@ -220,7 +220,7 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - `listPages()`: return `Promise<number[]>` of the five page numbers
     - Export `createMockDataStore(): PageDataProvider`
     - _Requirements: 11.1–11.7_
-  - [ ] 12.2 Write unit tests for MockDataStore
+  - [x] 12.2 Write unit tests for MockDataStore
     - Test `getPage(100)` returns page 100 with ≥4 mosaic cells in a 2-row region
     - Test `getPage(150)` returns page with ≥3 concealed answer cells
     - Test `getPage(999)` returns `null`
@@ -228,7 +228,7 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - _Requirements: 11.1–11.5, 11.7_
 
 - [x] 13. Implement Navigator
-  - [ ] 13.1 Implement `src/engine/Navigator.ts`
+  - [x] 13.1 Implement `src/engine/Navigator.ts`
     - Finite state machine with states `idle | buffering | loading | found | not-found`
     - `onDigit(d)`: append to `NumberBuffer`; transition `idle → buffering`; when buffer reaches 3 digits transition `buffering → loading` and call `PageDataProvider.getPage()`
     - `onBackspace()`: delegate to `NumberBuffer.backspace()`; if buffer becomes empty, transition `buffering → idle`
@@ -239,7 +239,7 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - 5 s idle timer on `NumberBuffer`: `clearTimeout` on each digit; if 5 s elapses without input, call `NumberBuffer.clear()` and transition back to `idle`
     - Export `createNavigator(...dependencies...): Navigator`
     - _Requirements: 7.1–7.10, 8.4–8.11, 9.6, 10.4, 10.6_
-  - [ ] 13.2 Write unit tests for Navigator state machine
+  - [x] 13.2 Write unit tests for Navigator state machine
     - Use `vi.useFakeTimers()` throughout
     - Test `idle → buffering → loading → found` happy path with 1000 ms advance
     - Test `idle → buffering → loading → not-found` when `getPage` returns `null`
@@ -261,7 +261,7 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
   - _Requirements: (design constraint — Bedstead font bundled locally, no CDN)_
 
 - [x] 16. Implement GridRenderer
-  - [ ] 16.1 Implement `src/ui/GridRenderer.ts`
+  - [x] 16.1 Implement `src/ui/GridRenderer.ts`
     - Accept `HTMLCanvasElement`, `GridModel`, `ColourModel`, `MosaicRenderer`, `FlashClock`, and `RevealMode` as constructor arguments
     - `init()`: await `document.fonts.ready`; then call `resize()` and `renderAll()`
     - `resize()`: compute `dpr = window.devicePixelRatio`; set canvas `width`/`height` attributes to `cssWidth * dpr` / `cssHeight * dpr`; call `ctx.scale(dpr, dpr)`; compute whole-pixel `cellWidth` and `cellHeight`; call `renderAll()`
@@ -270,13 +270,13 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - Attach `window.addEventListener('resize', ...)` to call `resize()`
     - Export `createGridRenderer(...): GridRenderer`
     - _Requirements: 1.1–1.5, 2.3, 2.4, 2.5, 3.1–3.6, 4.1–4.6, 5.2–5.4_
-  - [ ] 16.2 Write unit tests for GridRenderer cell sizing
+  - [x] 16.2 Write unit tests for GridRenderer cell sizing
     - Use a mock canvas with `jsdom` or manual stubs; verify `cellWidth = Math.floor(canvasWidth / 40)` and `cellHeight = Math.floor(canvasHeight / 25)`
     - Verify `devicePixelRatio` scaling is applied to canvas `width`/`height` attributes
     - _Requirements: 1.5, 1.2_
 
 - [x] 17. Implement OnScreenRemote
-  - [ ] 17.1 Implement `src/ui/OnScreenRemote.ts`
+  - [x] 17.1 Implement `src/ui/OnScreenRemote.ts`
     - Render digit buttons 0–9, Backspace, Hold, and Reveal using vanilla DOM (no framework)
     - Collapse/Expand toggle: hide/show the remote body; update toggle label
     - Dispatch custom events (`digit`, `backspace`, `hold`, `reveal`) that `main.ts` wires to the Navigator/engine
@@ -284,23 +284,23 @@ Implement the teletext engine as a set of pure TypeScript modules under `src/eng
     - Add Fastext colour buttons (R, G, Y, C) that dispatch `fastext` events with the colour as payload
     - Export `createOnScreenRemote(containerEl: HTMLElement): OnScreenRemote`
     - _Requirements: 8.4–8.8, 13.1–13.10_
-  - [ ] 17.2 Write unit tests for OnScreenRemote
+  - [x] 17.2 Write unit tests for OnScreenRemote
     - Use `jsdom` to test that pressing digit buttons dispatches `digit` events with correct values
     - Test that Collapse toggle hides the remote body and updates the label
     - Test that Hold and Reveal buttons dispatch the correct events
     - _Requirements: 13.1, 13.4–13.10_
 
 - [x] 18. Implement ScreenReaderView ARIA integration
-  - [ ] 18.1 Add ARIA live region to `index.html` and wire to `ScreenReaderGenerator` in `main.ts`
+  - [x] 18.1 Add ARIA live region to `index.html` and wire to `ScreenReaderGenerator` in `main.ts`
     - Add `<div aria-live="polite" id="sr-view">` to `index.html`
     - After every page render, call `ScreenReaderGenerator.generate()` and update the element's `textContent`
     - Bind `Alt+T` keyboard shortcut to move focus to `#sr-view`
     - _Requirements: 12.6, 12.7_
 
 - [x] 19. Wire everything together in `main.ts` and `index.html`
-  - [ ] 19.1 Create `index.html` with `<canvas id="teletext">`, `#sr-view`, and remote container; include `@font-face` for Bedstead from `public/fonts/bedstead.woff2`; apply 4:3 letterbox CSS
+  - [x] 19.1 Create `index.html` with `<canvas id="teletext">`, `#sr-view`, and remote container; include `@font-face` for Bedstead from `public/fonts/bedstead.woff2`; apply 4:3 letterbox CSS
     - _Requirements: 1.2, 1.4, 11.6_
-  - [ ] 19.2 Create `src/main.ts`
+  - [x] 19.2 Create `src/main.ts`
     - Instantiate all engine modules: `GridModel`, `ColourModel`, `MosaicRenderer`, `FlashClock`, `NumberBuffer`, `RevealMode`, `HoldMode`, `SubPageRotator`, `HeaderRow`, `FastextBar`, `ScreenReaderGenerator`, `Navigator`, `MockDataStore`
     - Instantiate `GridRenderer` and call `init()`
     - Instantiate `OnScreenRemote` and wire its custom events to Navigator/engine methods

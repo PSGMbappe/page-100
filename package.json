@@ -1,0 +1,21 @@
+{
+  "name": "page-100",
+  "version": "0.1.0",
+  "description": "Browser-based teletext emulator recreating the classic British teletext experience",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "3.2.4",
+    "fast-check": "3.23.2",
+    "jsdom": "26.1.0",
+    "typescript": "5.8.3",
+    "vite": "6.3.5",
+    "vitest": "3.2.4"
+  }
+}

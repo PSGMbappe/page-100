@@ -1,0 +1,490 @@
+{
+  "pbtResults": {
+    "2.2 Write property test for GridModel round-trip (Property 6)": {
+      "status": "passed",
+      "lastRunTimestamp": 1794395986087
+    },
+    "4.2 Write property test for mosaic round-trip (Property 1)": {
+      "status": "passed",
+      "lastRunTimestamp": 1794396809008
+    }
+  },
+  "executionHistory": {
+    "1. Set up project structure, tooling, and core TypeScript interfaces": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395259593
+      },
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395265594
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395481542
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395587173
+      }
+    ],
+    "2.1 Implement `src/engine/GridModel.ts`": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395259758
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395590160
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395888464
+      }
+    ],
+    "2.2 Write property test for GridModel round-trip (Property 6)": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395259973
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395899011
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794396455538
+      }
+    ],
+    "2.3 Write unit tests for GridModel": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260017
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395901316
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794396458104
+      }
+    ],
+    "3.1 Implement `src/engine/ColourModel.ts`": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260046
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395592657
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395891208
+      }
+    ],
+    "3.2 Write property test for ColourModel totality and injectivity (Property 7)": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260076
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395903800
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794396460826
+      }
+    ],
+    "3.3 Write property test for invalid colour rejection (Property 3)": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260111
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395907033
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794396463702
+      }
+    ],
+    "3.4 Write unit tests for ColourModel": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260135
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395909376
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794396466180
+      }
+    ],
+    "4.1 Implement `src/engine/MosaicRenderer.ts`": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260164
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395595197
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395893616
+      }
+    ],
+    "4.2 Write property test for mosaic round-trip (Property 1)": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260195
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794396469491
+      },
+      {
+        "executionId": "efd6960e-6bac-42a5-985b-64e9f280f355",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794396720600
+      }
+    ],
+    "4.3 Write property test for mosaic sub-block count (Property 2)": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260222
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794396472402
+      }
+    ],
+    "4.4 Write unit tests for MosaicRenderer": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260250
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794396475453
+      }
+    ],
+    "5.1 Implement `src/engine/NumberBuffer.ts`": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260293
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395597959
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395896043
+      }
+    ],
+    "5.2 Write property test for NumberBuffer accumulation invariant (Property 4)": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260389
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794396478034
+      }
+    ],
+    "5.3 Write property test for NumberBuffer backspace invariant (Property 5)": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260429
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794396480576
+      }
+    ],
+    "5.4 Write unit tests for NumberBuffer": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260482
+      },
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794396482935
+      }
+    ],
+    "6. Checkpoint — verify pure engine unit and property tests pass": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260516
+      }
+    ],
+    "7.1 Implement `src/engine/FlashClock.ts`": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260565
+      }
+    ],
+    "7.2 Write unit tests for FlashClock": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260626
+      }
+    ],
+    "8.1 Implement `src/engine/RevealMode.ts`": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260689
+      }
+    ],
+    "8.2 Implement `src/engine/HoldMode.ts`": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260725
+      }
+    ],
+    "8.3 Write unit tests for RevealMode and HoldMode": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260850
+      }
+    ],
+    "9.1 Implement `src/engine/SubPageRotator.ts`": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260891
+      }
+    ],
+    "9.2 Write unit tests for SubPageRotator": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260925
+      }
+    ],
+    "10.1 Implement `src/engine/ScreenReaderGenerator.ts`": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395260971
+      }
+    ],
+    "10.2 Write property test for screen reader attribute stripping (Property 8)": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395261100
+      }
+    ],
+    "10.3 Write property test for reveal mode preserving concealed attribute (Property 9)": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395261155
+      }
+    ],
+    "10.4 Write unit tests for ScreenReaderGenerator": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395261257
+      }
+    ],
+    "11.1 Implement `src/engine/HeaderRow.ts`": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395261294
+      }
+    ],
+    "11.2 Implement `src/engine/FastextBar.ts`": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395261323
+      }
+    ],
+    "11.3 Write unit tests for HeaderRow and FastextBar": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395261362
+      }
+    ],
+    "12.1 Implement `src/data/MockDataStore.ts`": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395261391
+      }
+    ],
+    "12.2 Write unit tests for MockDataStore": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395261454
+      }
+    ],
+    "13.1 Implement `src/engine/Navigator.ts`": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395261517
+      }
+    ],
+    "13.2 Write unit tests for Navigator state machine": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395261598
+      }
+    ],
+    "14. Checkpoint — verify full engine test suite": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395261714
+      }
+    ],
+    "15. Download and bundle the Bedstead teletext font": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395261767
+      }
+    ],
+    "16.1 Implement `src/ui/GridRenderer.ts`": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395261829
+      }
+    ],
+    "16.2 Write unit tests for GridRenderer cell sizing": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395262075
+      }
+    ],
+    "17.1 Implement `src/ui/OnScreenRemote.ts`": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395262126
+      }
+    ],
+    "17.2 Write unit tests for OnScreenRemote": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395262235
+      }
+    ],
+    "18.1 Add ARIA live region to `index.html` and wire to `ScreenReaderGenerator` in `main.ts`": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395262365
+      }
+    ],
+    "19.1 Create `index.html` with `<canvas id=\"teletext\">`, `#sr-view`, and remote container; include `@font-face` for Bedstead from `public/fonts/bedstead.woff2`; apply 4:3 letterbox CSS": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395262396
+      }
+    ],
+    "19.2 Create `src/main.ts`": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395262423
+      }
+    ],
+    "20. Final checkpoint — full test suite and coverage": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395262462
+      }
+    ],
+    "21. Write README.md and add MIT LICENSE file": [
+      {
+        "executionId": "4fac8f5c-4af7-4bc2-ae6e-9a000109e06e",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794395262497
+      }
+    ],
+    "2. Implement GridModel": [
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794396458140
+      }
+    ],
+    "3. Implement ColourModel": [
+      {
+        "executionId": "70cb73a0-39b4-4e64-add4-8d31299ab441",
+        "chatSessionId": "sess_d6ed972d-8641-468d-b806-add28c82ebf5",
+        "timestamp": 1794396466242
+      }
+    ]
+  }
+}
